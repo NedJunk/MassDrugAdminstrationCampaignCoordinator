@@ -1,0 +1,21 @@
+{
+  "name": "mass-drug-administration-campaign-coordinator",
+  "version": "0.0.1",
+  "description": "A tool for improving the efficacy of mass drug administration campaigns.",
+  "main": "",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NedJunk/MassDrugAdminstrationCampaignCoordinator.git"
+  },
+  "author": "Dave Gurnsey",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/NedJunk/MassDrugAdminstrationCampaignCoordinator/issues"
+  },
+  "homepage": "https://github.com/NedJunk/MassDrugAdminstrationCampaignCoordinator#readme",
+  "dependencies": {
+
+  }
+}
