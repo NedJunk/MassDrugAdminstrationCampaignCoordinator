@@ -17,21 +17,20 @@ class RandomWordsState extends State<RandomWords> {
       appBar: AppBar(
         title: Text('Startup Name Generator'),
         actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.list), 
-            onPressed: _pushSaved),
-          ],
-        ),
-        body: _buildSuggestions(),
+          IconButton(icon: Icon(Icons.list), onPressed: _pushSaved),
+        ],
+      ),
+      body: _buildSuggestions(),
     );
   }
-  Widget _buildSuggestions(){
+
+  Widget _buildSuggestions() {
     return ListView.builder(
       padding: const EdgeInsets.all(16.0),
       itemBuilder: (context, i) {
         if (i.isOdd) return Divider();
 
-        final index = i ~/2;
+        final index = i ~/ 2;
         if (index >= _suggestions.length) {
           _suggestions.addAll(generateWordPairs().take(10));
         }
@@ -63,7 +62,7 @@ class RandomWordsState extends State<RandomWords> {
     );
   }
 
-  void _pushSaved(){
+  void _pushSaved() {
     Navigator.of(context).push(
       MaterialPageRoute<void>(
         builder: (BuildContext context) {
@@ -72,18 +71,14 @@ class RandomWordsState extends State<RandomWords> {
               return ListTile(
                 title: Text(
                   pair.asPascalCase,
-                  style:  _biggerFont,
+                  style: _biggerFont,
                 ),
               );
             },
           );
-          final List<Widget> divided = ListTile
-            .divideTiles(
-              context: context,
-              tiles: tiles
-            )
-            .toList();
-          
+          final List<Widget> divided =
+              ListTile.divideTiles(context: context, tiles: tiles).toList();
+
           return Scaffold(
             appBar: AppBar(
               title: Text('Saved Suggestions'),
