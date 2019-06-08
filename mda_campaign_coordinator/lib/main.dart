@@ -8,6 +8,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Startup Name Generator',
+      theme: ThemeData(
+        primaryColor: Colors.blue,
+        accentColor: Colors.blueAccent,
+        canvasColor: Colors.white),
       home: RandomWords(),
     );
   }
@@ -22,7 +26,7 @@ class RandomWordsState extends State<RandomWords> {
   final _suggestions = <WordPair>[];
   final _biggerFont = const TextStyle(fontSize: 18.0);
   final _saved = Set<WordPair>();
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
